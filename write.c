@@ -1,4 +1,4 @@
-// hookando a syscall da write()
+// hook syscall  write()
 
 #include <stdio.h>
 #include <unistd.h>
