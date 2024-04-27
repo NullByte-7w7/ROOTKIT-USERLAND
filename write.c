@@ -28,7 +28,7 @@ int main(void){
 
         char nome[200];
 
-        printf("Qual Seu Nome? \n");
+        printf("What's your name? \n");
         scanf("%s", &nome);
 
         write(1, nome, strlen(nome));
