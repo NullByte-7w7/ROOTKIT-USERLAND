@@ -50,7 +50,3 @@ But what happens if the correct password is entered?
 6. **Log Concealment**: The rootkit ensures that commands like `tail` will have no effect. Sysadmins won't be able to spot suspicious activity in logs, nor will they be able to use other tools to inspect them.
 
 7. **Future Plans**: Looking ahead, I'm considering further enhancements to make the rootkit even more stealthy. For instance, I'm contemplating hiding `/etc/ld.so.preload` to minimize suspicion from sysadmins.
-
-
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
