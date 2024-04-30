@@ -37,5 +37,6 @@ But what happens if the correct password is entered?
 
 7. **Future Plans**: Looking ahead, I'm considering further enhancements to make the rootkit even more stealthy. For instance, I'm contemplating hiding `/etc/ld.so.preload` to minimize suspicion from sysadmins.
 
+
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
