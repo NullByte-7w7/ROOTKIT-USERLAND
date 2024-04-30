@@ -1,6 +1,6 @@
 ## Introduction
 
-Welcome to my rootkit! This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
+Welcome to my rootkit userland This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
 
 ## INSTALL MANUAL
 
