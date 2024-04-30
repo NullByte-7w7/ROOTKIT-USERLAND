@@ -1,7 +1,3 @@
-# rookit userland
-
-# Welcome to My Rootkit
-
 ## Introduction
 
 Welcome to my rootkit! This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
