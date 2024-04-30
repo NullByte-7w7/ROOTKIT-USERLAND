@@ -24,4 +24,4 @@ But what happens if the correct password is entered?
 
 ## Disclaimer
 
-Please note that the use of rootkits and similar tools may be illegal and unethical. This README serves solely as a fictional exploration of hypothetical functionality and should not be used for malicious purposes.
+Please note that the use of rootkits and similar tools may be illegal and unethical. I am not responsible for any action using this userland rootkit
