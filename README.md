@@ -2,12 +2,7 @@
 
 Welcome to my rootkit userland This toolkit offers some cool and interesting functionalities designed to enhance your digital security. Let's dive into what it can do.
 
-## INSTALL MAKE
 
-1) *install with Make*
-```
-# make
-```
 ## INSTALL MANUAL
 
 1) *git clone*:
