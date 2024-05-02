@@ -18,8 +18,6 @@
 
 	ssize_t result;
 
-	ssize_t reads;
-
 	const int pids = 1337;
 
        int (*matar)(pid_t pid, int sig);
