@@ -4,10 +4,10 @@
 if [ $(whoami) = "root" ]; then
 
 # Loading
-echo -n "[+] Install"
+echo -en "\033[32m[+] Install\033[0m"
 
 for load in $(seq 1 3); do
-echo -n "."
+echo  -n "."
 sleep 0.5;
 done
 
@@ -24,10 +24,10 @@ ldconfig
 #clear screen
 clear
 
-echo "[!] Rootkit Load, Good Hack! Open New Terminal."
+echo -e "\033[32m[!] Rootkit Load, Good Hack! Open New Terminal.\033[0m"
 
 else
 
-echo "[!] Run With ROOT!"
+echo -e "\033[31m[!] Run With ROOT!\033[0m"
 
 fi
