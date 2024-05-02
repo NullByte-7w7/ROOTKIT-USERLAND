@@ -1,4 +1,4 @@
-TARGET = DRK.so
+TARGET = _libc.so
 CC = gcc
 CFLAGS = -shared -fPIC -ldl
 SRCS = DRK.c
