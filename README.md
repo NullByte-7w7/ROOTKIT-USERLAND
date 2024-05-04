@@ -6,12 +6,6 @@ Welcome to my rootkit userland This toolkit offers some cool and interesting fun
 
 
 
-https://github.com/DARKSECshell/ROOTKIT-USERLAND/assets/121623691/0ce59ac5-a30c-4c20-b7a7-33c25c54cced
-
-
-
-
-
 ## INSTALL MANUAL
 
 1) *git clone*:
