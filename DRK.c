@@ -2,6 +2,7 @@
 // author: Darksec, in development phase
 
 #define _GNU_SOURCE
+#include <sys/wait.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <stdio.h>
@@ -86,6 +87,9 @@ if(fork() == 0){
     execvp("sh", argv);
 
 }
+
+wait(NULL);
+
 	break;
 
 case 2:
