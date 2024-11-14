@@ -31,7 +31,7 @@
 if(pid == pids){
 
 	char password[20];
-	char *pass = "darksec";
+	char *pass = "nullbyte";
 
 
 result = write(1, "[+] What's the Password? \n", strlen("[+] What's the Password? \n"));
